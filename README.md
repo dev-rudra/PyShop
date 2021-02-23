@@ -68,4 +68,13 @@ default we see some boilerplates-code (that are repeated in multiple places with
 to define the **view function()** 
     `def index()` it's the main page of an app so we call it by convention like `index()`
     the `viw function(request)` alwasy takes a parameter that is `http request`
-    we need to import the `HTTPResponse` class `from django.http import HttpResponse` which handles response and returns to the client or browser. and needs to return the `return HTTPResponse` object instance of that `HTTPResponse` Class.
+    we need to import the `HttpResponse` class `from django.http import HttpResponse` which handles response and returns to the client or browser. and needs to return the `return HttpResponse` object instance of that `HttpResponse` Class.
+
+```python
+from django.http import HttpResponse
+from django.shortcuts import render
+
+def index(request):
+    return HttpResponse('Hello Products!')
+
+```
