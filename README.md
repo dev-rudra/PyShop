@@ -11,7 +11,7 @@ $pip install Django==3.1.7
 
 ## Create project and apps
 
-`django-admin startproject project_name` . (.is called period which indicates the current location in the project). `python3 manage.py startapp app_name`.
+for project `django-admin startproject project_name` . (.is called period which indicates the current location in the project). for app `python3 manage.py startapp app_name`.
 
 ```sh
 project
