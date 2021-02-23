@@ -54,6 +54,13 @@ Parameter   | Description
 __init__.py       | The `__init__.py` is the initialization of the package. This is reusable to other python developer to resuse this package and saves the time.
 admin.py    | The `admin.py` module is used to define how the adminstratative panel of this app will looks like.
 apps.py        | The `apps.py` module will store the various configuration setting of the particular app but it's little bit confuse because it's better to call config.py.
-models.py   | The `models.py` module is used to define `Slasses` and `New Types` for modeling the concept in the app. For example products, categories and reviews 
+models.py   | The `models.py` module is used to define `Classes` and `New Types` for modeling the concept in the app. For example products, categories and reviews 
 tests.py | The `tests.py` module is used to define the automated test for the app.
 views.py    | The `views.py` will defines what should the user see when navigating to the certain `url/user/1` page in the browser.
+
+# View Function
+
+How to create first view / view function in django. A view function is a `=>(), function()` that get calls by django when the user navigates to the perticular page. For example when user navigates to  `http://127.0.0.1:8000/products`. a browser sends `http request` for web server at that point django takes that request it inspect the url address it fegure it outs that it is going to see the list of products then it will call the function which call a view function. And the job of this function is to return the response to the browser or the client so this function will generates shome `HTML markups` to return to the client. And browser will get the contents and displays the page in the window.
+
+let's work on views.py module:
+default we see some boilerplates-code (that are repeated in multiple places with little to no variation) `from django.shortcuts import render`.
