@@ -1,6 +1,5 @@
 # PyShop
-This is learning project for education purpose.
-
+**PyShop** is first python django framework project by professor **Asmony** 2021.
 
 ## Table of Contents
 
@@ -21,7 +20,7 @@ $pip install Django==3.1.7
 
 # Create project and apps
 
-for project `django-admin startproject project_name` . (.is called period which indicates the current location in the project). for app `python3 manage.py startapp app_name`.
+for **project** `django-admin startproject project_name` . (.is called period which indicates the current location in the project). for **apps** `python3 manage.py startapp app_name`.
 
 ```sh
 project
