@@ -21,7 +21,7 @@ $django-admin startproject pyshop .
 ## Web Development Servers
 
 after creating the django-admin project we need to run the web development server with following command windows $python, mac python+version(python3)
-example: Starting development server at http://127.0.0.1:8000/ => we can see the django default template on browser.
+example: Starting development server at `http://127.0.0.1:8000/` => we can see the django default template on browser.
 
 ```sh
 $python3 manage.py runserver
