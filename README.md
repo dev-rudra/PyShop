@@ -69,6 +69,8 @@ to define the **view function()**
     `def index()` it's the main page of an app so we call it by convention like `index()`
     the `viw function(request)` alwasy takes a parameter that is `http request`
     we need to import the `HttpResponse` class `from django.http import HttpResponse` which handles response and returns to the client or browser. and needs to return the `return HttpResponse` object instance of that `HttpResponse` Class.
+    
+**View Function():**
 
 ```python
 from django.http import HttpResponse
@@ -78,3 +80,6 @@ def index(request):
     return HttpResponse('Hello Products!')
 
 ```
+
+**URL Maping** We have done the view function but the django will not understant that it should call the view function when we send the request to `/products` so we need to tell that django whenever there is a request to `/products` then call to the `index()` function. That's why, we need to map `/products` url to the `index()` function.
+
