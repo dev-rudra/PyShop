@@ -81,5 +81,54 @@ def index(request):
 
 ```
 
-**URL Maping** We have done the view function but the django will not understant that it should call the view function when we send the request to `/products` so we need to tell that django whenever there is a request to `/products` then call to the `index()` function. That's why, we need to map `/products` url to the `index()` function.
+**URL Maping** => we have done the view function but the django will not understant that it should call the view function when we send the request to `/products` so we need to tell that django whenever there is a request to `/products` then call to the `index()` function. That's why, we need to map `/products` url to the `index()` function.
+
+**Steps:**
+- navigate to the app folder, right click and add new python file urls.py. (we have to create ourselves urls.py file)
+We have to define the variables as rules no -, caps and so on. Should be all in lowercase. And should set to the list object. Inside this list we map various urls to the `view function()`. To reference the url we need to import the `path function()`. With the path() function we can map the url to the view function so we need to pass the path() function. The first argument is the string that specifies the url end point. path('') the empty string referes as the root end point. As a second arguments we need to specify the view function, that is defined `inside of the views.py module` so we need to import the `views.py` module in the `urls.py` module for example `from . import views`. To access the `index function` we have to act as like object of views module like `views.index()` in to the `urls.py` module. 
+
+- Notes: we don't need to pass the function like `path('', views.index)` because we just need to pass the references.
+
+```python
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.index)
+]
+
+```
+
+- One more step left because django is not stil ready over the `products` app so, we need to tell the django about `products` app to reference `products` app. So what we need to do is just collapse the `products` app folder and jump to the `pyshop` app folder and there is another `urls.py` module so this is like the parent and root urls module in the django project.
+
+**pyshop/urls.py**
+
+```python
+
+from django.contrib import admin
+from django.urls import path
+
+urlpatterns = [
+    path('admin/', admin.site.urls)
+]
+
+
+```
+- so what happened so far in the pyshop/urls.py so we need to define another path object function and inform to the django any path any urls that starts with the `product/` and deligates(authorize) them to the products app. So we want the django that deligate the handling request to the defined url modules in the `products/urls.py` ('', 'products/new', 'products/add', 'products/1') module. To deligate the we need to improt `include function` in the root urls.py
+
+
+```python
+
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('products/', include('products.urls'))
+]
+
+
+```
+`path('products/', include('products.urls'))` any urls start with products/ then send to the `urls.py` module in the products app.
+
 
