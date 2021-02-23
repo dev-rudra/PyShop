@@ -60,7 +60,12 @@ views.py    | The `views.py` will defines what should the user see when navigati
 
 # View Function
 
-How to create first view / view function in django. A view function is a `=>(), function()` that get calls by django when the user navigates to the perticular page. For example when user navigates to  `http://127.0.0.1:8000/products`. a browser sends `http request` for web server at that point django takes that request it inspect the url address it fegure it outs that it is going to see the list of products then it will call the function which call a view function. And the job of this function is to return the response to the browser or the client so this function will generates shome `HTML markups` to return to the client. And browser will get the contents and displays the page in the window.
+How to create first view / view function in django. A view function is a `=>(), function()` that get calls by django when the user navigates to the perticular page. For example when user navigates to  `http://127.0.0.1:8000/products`. a browser sends `http request` for web server at that point django takes that request it inspect the url address then it figures it outs that it is going to see the list of all products content then it will call the function which call a view function. And the job of this function is to return the response to the browser or the client so this function will generates shome `HTML markups` to return to the client. And browser will get the contents and displays the page in the window.
 
 let's work on views.py module:
-default we see some boilerplates-code (that are repeated in multiple places with little to no variation) `from django.shortcuts import render`.
+default we see some boilerplates-code (that are repeated in multiple places with little to no variation) `from django.shortcuts import render` here `django` is a package `shortcuts` is a module and `render` is a function.
+
+to define the **view function()** 
+    `def index()` it's the main page of an app so we call it by convention like `index()`
+    the `viw function(request)` alwasy takes a parameter that is `http request`
+    we need to import the `HTTPResponse` class `from django.http import HttpResponse` which handles response and returns to the client or browser. and needs to return the `return HTTPResponse` object instance of that `HTTPResponse` Class.
