@@ -9,12 +9,18 @@ OS X
 $pip install Django==3.1.7
 ```
 
-## Create Project in Django
+## Create project and apps
 
-django-admin startproject pyshop [project_name] . (.is called period which indicates the current location in the project)
+`django-admin startproject project_name` . (.is called period which indicates the current location in the project). `python3 manage.py startapp app_name`.
 
 ```sh
-$django-admin startproject pyshop .
+project
+
+$django-admin startproject pyshop . 
+
+app
+
+$python3 manage.py startapp
 
 ```
 
