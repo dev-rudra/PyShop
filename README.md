@@ -182,7 +182,9 @@ In the `settings.py` module we registered our apps `products.apps.ProductsConfig
 
 We will see the following result
 
-```Migrations for 'products':
+```
+- ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `#f03c15`
+Migrations for 'products':
   products/migrations/0001_initial.py
     - Create model Product
 ```
