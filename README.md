@@ -182,8 +182,8 @@ In the `settings.py` module we registered our apps `products.apps.ProductsConfig
 
 We will see the following result
 
-`Migrations for 'products':
+```Migrations for 'products':
   products/migrations/0001_initial.py
     - Create model Product
-`
+```
 
