@@ -181,9 +181,9 @@ In the `settings.py` module we registered our apps `products.apps.ProductsConfig
 `python3 manage.py makemigrations`
 
 We will see the following result
-
-```
 - ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `#f03c15`
+```
+[#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `#f03c15`
 Migrations for 'products':
   products/migrations/0001_initial.py
     - Create model Product
