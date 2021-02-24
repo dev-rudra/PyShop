@@ -131,4 +131,59 @@ urlpatterns = [
 ```
 `path('products/', include('products.urls'))` any urls start with products/ then send to the `urls.py` module in the products app.
 
+# Model
+
+Madel is a representation of real world concept. For example in online shopping we have `orders, customer, shopping_cart, product and review` so on.
+We need to inherit the model class in django
+
+```python
+    from django.db import models
+
+    class Product(models.Model):
+
+```
+==> We peform certain operation in model objects like add, delete, update and so on.
+
+```python
+    from django.db import models
+    
+    
+    class Product(models.Model):
+    name = models.CharField(max_length=255)
+    price = models.FloatField()
+    stock = models.IntegerField()
+    image_url = models.CharField(max_length=2083)
+
+```
+- in the above Product class we defined the attributes of that class.
+
+# Migration
+DB Browser for Sqlite[https://sqlitebrowser.org/dl/]
+
+- After creating the model class we need to register the `Products` app to the `settings.py` module under the `INSTALLED_APSS = []` list in the root folder.
+
+```python
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'products.apps.ProductsConfig'
+]
+```
+In the `settings.py` module we registered our apps `products.apps.ProductsConfig`. Then after do the following steps to migrate the database. (*Reminder: you need to register each and every apps under the parent settings.py module*).
+
+**Migrate** it to the database run following command:
+
+`python3 manage.py makemigrations`
+
+We will see the following result
+
+`Migrations for 'products':
+  products/migrations/0001_initial.py
+    - Create model Product
+`
 
