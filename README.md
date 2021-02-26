@@ -202,3 +202,43 @@ Running migrations:
   Applying sessions.0001_initial... OK
 
 ```
+
+# Admin panel in django
+- We need to make super user using `python3 manage.py createsuperuser` then it will ask `Username:`, `Email address:`, `Password:` and `Password (again):` on the terminal 
+
+# To add the app into the admin panel we can do from the `app/admin.py` module.
+
+```python
+
+from django.contrib import admin
+from .models import Product
+
+
+admin.site.register(Product)from django.contrib import admin
+from .models import Product
+
+
+admin.site.register(Product)
+```
+- to add the module into the admin panel we need to import the module model into the admin module and pass the class of the module into register method of site object.
+
+
+# Customizing the Admin site
+- We need to create new class on the `admin.py` module
+from above one line code we got the specific admin so we need to customize that to solve the above issue need to create new class and need to pass as a parameter admin.ModelAdmin in the class. in the class body we need to overwrite the default settings as like below:
+
+```python
+
+class ProductAdmin(admin.ModelAdmin):
+    list_display = ('name', 'price', 'stock')
+    
+```
+
+After defining the above setting we need to pass this class as a second parameter of register method.
+
+```python
+
+admin.site.register(Product, ProductAdmin)
+
+```
+
