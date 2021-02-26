@@ -241,4 +241,4 @@ After defining the above setting we need to pass this class as a second paramete
 admin.site.register(Product, ProductAdmin)
 
 ```
-
+# To 
